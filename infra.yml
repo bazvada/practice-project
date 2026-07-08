@@ -1,0 +1,21 @@
+services:
+  db:
+    image: "postgres:18-alpine"
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    networks:
+      - postgres-net
+    env_file: ./config/.env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+      start_period: 5s
+
+networks:
+  postgres-net:
+
+volumes:
+  postgres-data:
