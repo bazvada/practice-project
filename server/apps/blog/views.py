@@ -14,15 +14,15 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     model = Post
     fields = ['title', 'text', 'image']
-    template_name = 'notes/note_form.html'
-    success_url = reverse_lazy('note_list')
+    template_name = 'blog/post_form.html'
+    success_url = reverse_lazy('post_list')
 
 class PostUpdateView(UpdateView):
     model = Post
     fields = ['title', 'text', 'image']
-    template_name = 'notes/note_form.html'
-    success_url = reverse_lazy('note_list')
+    template_name = 'blog/post_form.html'
+    success_url = reverse_lazy('post_list')
 
 class PostDeleteView(DeleteView):
     model = Post
-    success_url = reverse_lazy('note_list')
+    success_url = reverse_lazy('post_list')
