@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ object.title }}</title>
+</head>
+<body>
+    <h1>{{ object.title }}</h1>
+
+    {{ object.text }}
+
+    <br>
+    <br>
+    
+    Дата создания: {{ object.created_at }}
+    
+    <br>
+    <br>
+    
+      {% if object.image %}
+
+        <img src="{{ object.image.url }}" width="400">
+
+    {% endif %}
+    
+    <br>
+    <br>
+
+    <a href="{% url 'post_list' %}">К списку</a>
+    <br>
+    <a href="{% url 'post_edit' object.id %}">Редактировать</a>
+    <br>
+    <a href="{% url 'post_delete' object.id %}">Удалить</a>
+</body>
+</html>

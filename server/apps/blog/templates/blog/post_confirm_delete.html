@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаление записи</title>
+</head>
+<body>
+    <h1>Удалить запись?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Удалить">
+    </form>
+    
+    <br>
+
+    <a href="{% url 'post_list' %}">К списку</a>
+</body>
+</html>

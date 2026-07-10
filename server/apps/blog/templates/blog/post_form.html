@@ -2,12 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Новая заметка</title>
+    <title>Новая запись</title>
 </head>
 <body>
-    <h1>Новая заметка</h1>
+    <h1>Новая запись</h1>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Сохранить">

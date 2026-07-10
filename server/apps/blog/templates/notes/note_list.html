@@ -1,9 +1,0 @@
-<h1>Блокнот</h1>
-
-{% for note in object_list %}
-<a href="{% url 'note_detail' note.id %}">{{ note.title }}</a>
-<br>
-{{ note.text }}
-<br>
-<br>
-{% endfor %}
