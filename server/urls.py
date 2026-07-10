@@ -47,7 +47,7 @@ handler500 = build_500_handler(router.prefix, serializer=MsgspecSerializer)
 urlpatterns = [
     # Apps:
     path('main/', include(main_urls, namespace='main')),
-    path('notes/', include('server.apps.notes.urls')),
+    path('blog/', include('server.apps.blog.urls')),
     # Apis:
     path(router.prefix, include((router.urls, 'server'), namespace='api')),
     # OpenAPI:
