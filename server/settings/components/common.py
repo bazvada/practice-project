@@ -199,3 +199,6 @@ PERMISSIONS_POLICY: dict[str, str | list[str]] = {}
 # https://docs.djangoproject.com/en/6.0/ref/settings/#std:setting-EMAIL_TIMEOUT
 
 EMAIL_TIMEOUT = 5
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
