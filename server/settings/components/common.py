@@ -35,6 +35,7 @@ INSTALLED_APPS: tuple[str, ...] = (
     # django-modern-rest:
     'dmr',
     'corsheaders',
+    'rest_framework',
     # Security:
     'axes',
     # Health checks:
