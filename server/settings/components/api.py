@@ -28,6 +28,20 @@ DMR_SETTINGS: Any = {
     Settings.openapi_examples_seed: 1,
 }
 
+REST_FRAMEWORK = {
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+
+    'PAGE_SIZE': 5,
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.UserRateThrottle',
+        'rest_framework.throttling.AnonRateThrottle',
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'user': '10000/day',
+        'anon': '1000/day',
+    },
+}
 
 # django-cors-headers
 # https://github.com/adamchainz/django-cors-headers

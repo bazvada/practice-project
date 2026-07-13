@@ -6,7 +6,7 @@ const posts = ref([])
 onMounted(() => {
   fetch('http://localhost:8000/blog/posts/')
     .then(response => response.json())
-    .then(data => posts.value = data)
+    .then(data => posts.value = data.results)
 })
 </script>
 
