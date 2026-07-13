@@ -122,10 +122,10 @@ CORS_ALLOWED_ORIGINS.extend([
 # https://github.com/taobojlen/django-zeal
 
 # Should be the first in line:
-MIDDLEWARE = ('zeal.middleware.zeal_middleware', *MIDDLEWARE)
+# MIDDLEWARE = ('zeal.middleware.zeal_middleware', *MIDDLEWARE)
 
 # Logging N+1 requests:
-ZEAL_RAISE = True  # comment out if you want to allow N+1 requests
+ZEAL_RAISE = False  # comment out if you want to allow N+1 requests
 ZEAL_SHOW_ALL_CALLERS = True
 ZEAL_LOGGER = logging.getLogger('django')
 ZEAL_ALLOWLIST = [

@@ -13,7 +13,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.admindocs import urls as admindocs_urls
-from django.urls import include
+from django.urls import include, path
 from django.views.generic import TemplateView
 from dmr.openapi import build_schema
 from dmr.openapi.views import (
@@ -66,6 +66,8 @@ urlpatterns = [
     path('docs/swagger/', SwaggerView.as_view(schema), name='swagger'),
     path('docs/scalar/', ScalarView.as_view(schema), name='scalar'),
     path('docs/redoc/', RedocView.as_view(schema), name='redoc'),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
     # Health checks:
     path(
         'health/',

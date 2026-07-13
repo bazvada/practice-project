@@ -1,3 +1,4 @@
+from datetime import timedelta
 import tomllib
 from typing import Any, cast
 
@@ -41,6 +42,14 @@ REST_FRAMEWORK = {
         'user': '10000/day',
         'anon': '1000/day',
     },
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
 # django-cors-headers

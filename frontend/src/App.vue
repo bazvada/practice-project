@@ -2,6 +2,9 @@
 import { ref, onMounted } from 'vue'
 
 const posts = ref([])
+const newTitle = ref('')
+const newText = ref('')
+const token = ref('')
 
 onMounted(() => {
   fetch('http://localhost:8000/blog/posts/')

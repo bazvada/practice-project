@@ -37,6 +37,7 @@ INSTALLED_APPS: tuple[str, ...] = (
     'corsheaders',
     'rest_framework',
     'django_filters',
+    'djoser',
     # Security:
     'axes',
     # Health checks:
