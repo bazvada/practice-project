@@ -1,6 +1,7 @@
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
 from django.urls import reverse_lazy
 from rest_framework import viewsets
+from .permissions import ReadOnlyOrAdmin
 
 from .models import Post
 from .serializers import PostSerializer
@@ -32,3 +33,4 @@ class PostDeleteView(DeleteView):
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    permission_classes = (ReadOnlyOrAdmin,)
