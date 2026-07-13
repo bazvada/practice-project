@@ -1,6 +1,7 @@
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
+from django_filters.rest_framework import DjangoFilterBackend
 from django.urls import reverse_lazy
-from rest_framework import viewsets
+from rest_framework import filters, viewsets
 from .permissions import ReadOnlyOrAdmin
 
 from .models import Post
@@ -31,6 +32,11 @@ class PostDeleteView(DeleteView):
     success_url = reverse_lazy('post_list')
 
 class PostViewSet(viewsets.ModelViewSet):
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('-created_at')
     serializer_class = PostSerializer
     permission_classes = (ReadOnlyOrAdmin,)
+    filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
+    filterset_fields = ('title',)
+    search_fields = ('title', 'text')
+    ordering_fields = ('title', 'created_at')
+    ordering = ('-created_at',)
