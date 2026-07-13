@@ -114,6 +114,7 @@ _CSP_DIRECTIVES['connect-src'] += [SELF]
 CORS_ALLOWED_ORIGINS.extend([
     'http://localhost',
     'http://127.0.0.1',
+    'http://localhost:5173',
 ])
 
 
