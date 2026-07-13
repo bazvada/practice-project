@@ -36,6 +36,7 @@ INSTALLED_APPS: tuple[str, ...] = (
     'dmr',
     'corsheaders',
     'rest_framework',
+    'django_filters',
     # Security:
     'axes',
     # Health checks:
